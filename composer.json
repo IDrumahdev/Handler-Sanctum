@@ -1,0 +1,26 @@
+{
+    "name": "ibnudirsan/lara-handler-sanctum",
+    "description": "Laravel Sanctum API Handler.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ibnudirsan\\LaraHandlerSanctum\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ibnudirsan\\LaraHandlerSanctum\\HttpHandleServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "ibnudirsan",
+            "email": "ibnudirsan@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

@@ -16,6 +16,10 @@ class HandlerSanctum extends ServiceProvider
     public function register()
     {
         $this->app->bind(Response::class, renderResponse::class);
+
+        $this->app->singleton('Ibnudirsan\LaraHandlerSanctum\Exceptions', function($app) {
+            return $app['Ibnudirsan\LaraHandlerSanctum\Exceptions\Handler'];
+        });
     }
 
     /**

@@ -28,5 +28,7 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "laravel/ui": "^4.0"
+    }
 }

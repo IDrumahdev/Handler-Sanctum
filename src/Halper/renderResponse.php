@@ -6,21 +6,15 @@ use Ibnudirsan\LaraHandlerSanctum\Halper\Response;
 
 class renderResponse
 {
-    public static function handler($request, $exception)
+    public static function handler($request, $statusCode, $check, $Authorization)
     {
         /**
         * render result code.
         */
-        if ($request->is('api/*')) {
-            $code = method_exists($exception, 'getStatusCode');
-                if (method_exists($exception, 'getStatusCode')) {
-                    $statusCode = $this->prepareException($exception)->getStatusCode();
-                    return Response::Status($statusCode);
-                } else {
-                        $statusCode = 500;
-                        return Response::Status($statusCode);
-                }
-        }
-
+        if ($request->is('api/*') && $check == false || empty($Authorization)){
+            return Response::Status(401);
+        } elseif ($request->is('api/*')) {
+            return Response::Status($statusCode);
+        } 
     }
 }

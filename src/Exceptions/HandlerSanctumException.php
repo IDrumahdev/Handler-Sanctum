@@ -31,9 +31,6 @@ class HandlerSanctumException extends ExceptionHandler
      * @throws \Throwable
      */
     public function render($request, Throwable $exception) {
-        /**
-        * Jika status code 500 dan selain 500.
-        */
         if ($request->is('api/*')) {
             if (method_exists($exception, 'getStatusCode')) {
                 $statusCode = $this->prepareException($exception)->getStatusCode();
@@ -41,7 +38,9 @@ class HandlerSanctumException extends ExceptionHandler
             } else {
                     $statusCode = 500;
             }
-        } elseif ($request->is('api/*') && auth('sanctum')->check() == false || empty($request->header('Authorization'))){
+        }
+
+        if ($request->is('api/*') && auth('sanctum')->check() == false || empty($request->header('Authorization'))){
             return Response::Status(401);
         }
             return parent::render($request, $exception);

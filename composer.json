@@ -3,8 +3,8 @@
     "keywords": [
         "sanctum",
         "api",
-        "laravel",
-        "lumen"
+        "framework",
+        "laravel"
       ],
     "description": "Laravel Sanctum API Handler.",
     "type": "library",
@@ -29,6 +29,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "laravel/ui": "^4.0"
+        "php": "^7.2.5|^8.0",
+        "laravel/framework": "^7.29"
     }
 }

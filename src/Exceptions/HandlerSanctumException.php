@@ -35,32 +35,14 @@ class HandlerSanctumException extends ExceptionHandler
         * Jika status code 500 dan selain 500.
         */
         if ($request->is('api/*')) {
-            $code = method_exists($exception, 'getStatusCode');
             if (method_exists($exception, 'getStatusCode')) {
                 $statusCode = $this->prepareException($exception)->getStatusCode();
                 return Response::Status($statusCode);
             } else {
                     $statusCode = 500;
             }
-        }
-
-        if ($request->is('api/*') && auth('sanctum')->check() == false || empty($request->header('Authorization'))){
-
-            $errorStatus = true;
-            $status      = "Unauthorized";
-            $typeToken   = "TokenKey";
-            $message     = "Unauthorized Access.";
-
-            $response = [
-                    'status'    =>$status,
-                    'httpcode'  =>401,
-                    'type'      =>$typeToken,
-                    'error'     =>$errorStatus,
-                    'info'      => [
-                        'message'   =>$message
-                ]
-            ];
-                return response()->json($response, 401);
+        } elseif ($request->is('api/*') && auth('sanctum')->check() == false || empty($request->header('Authorization'))){
+            return Response::Status(401);
         }
             return parent::render($request, $exception);
     }

@@ -22,9 +22,11 @@ class HandlerSanctum extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        //
+        $this->publishes([
+            __DIR__ . '/config' => database_path('config/handler'),
+        ], 'handler-sanctum');
     }
 
 }

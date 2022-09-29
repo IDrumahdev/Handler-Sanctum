@@ -4,57 +4,63 @@ namespace Ibnudirsan\LaraHandlerSanctum\Halper;
 
 class ResponseJson {
 
-    public static function Cretae()
+    public static function Cretae($data)
     {
         $errorStatus = false;
         $status      = "Create Data";
         $message     = "Successfully created Data";
+        $result      = $data->makeHidden(config('handler.hidden'));
 
         $response = [
-            'error'     =>$errorStatus,
-            'info'      => [
-                'Status'    => $status,
-                'httpcode'  => 201,
-                'Message'   => $message
+            'app'   => [
+                'info'      => [
+                    'error'     =>$errorStatus,
+                    'Status'    => $status,
+                    'httpcode'  => 201,
+                    'Message'   => $message
+                ],
+                'result'  => [
+                    'data'  => $result
                 ]
-            ];
-
-        return response()->json($response, 201);
+            ]
+        ];
+            return response()->json($response, 201);
     }
 
-    public static function Read()
+    public static function Read($data)
     {
         # code...
     }
 
-    public function Show($data)
+    public static function Show($data)
     {
         $errorStatus = false;
         $status      = "Show Data";
         $message     = "Successfully displaying Data";
-        $show        = $data->makeHidden(config('handler.hidden'));
+        $result      = $data->makeHidden(config('handler.hidden'));
 
         $response = [
-            'error'     =>$errorStatus,
-            'info'      => [
-                'Status'    => $status,
-                'httpcode'  => 200,
-                'Message'   => $message
-            ],
-            'result'    => [
-                'data'  => $show
+        'app'   => [
+                'info'      => [
+                    'error'     =>$errorStatus,
+                    'Status'    => $status,
+                    'httpcode'  => 200,
+                    'Message'   => $message
+                ],
+                'result'    => [
+                    'data'  => $result
+                ]
             ]
-            ];
-
-        return response()->json($response, 200);
+        ];
+            return response()->json($response, 200);
     }
 
-    public static function update()
+    public static function update($data = [])
     {
         # code...
     }
 
-    public static function Delete()
+    public static function Delete($data = [])
     {
         # code...
     }

@@ -39,8 +39,23 @@ $app->singleton(
 
 ```
 
-Response Json : 
-Example Show
+## Response Json
+
+
+```php
+
+    /**
+     * Method yang dapat digunakan
+     */
+    return ResponseJson::cretae($result);
+    return ResponseJson::read($result);
+    return ResponseJson::show($result);
+    return ResponseJson::update();
+    return ResponseJson::delete();
+
+```
+
+#### Usage Example :
 
 ```php
 // App/Http/Controllers/usersController.php
@@ -55,13 +70,57 @@ use Ibnudirsan\LaraHandlerSanctum\Halper\ResponseJson;
 
 class usersController extends Controller
 {
-    public function getDataUsers()
+    public function getUser($id)
     {
-        $users = User::all();
-            return ResponseJson::Show($users);
+        $result = User::where('id',$id)->first();
+            return ResponseJson::read($result);
     }
 }
 
 ```
 
-Publish package configuration ``` php artisan vendor:publish --tag=handler-sanctum-config ```
+```
+// Contoh Return Json
+
+{
+    "app": {
+        "info": {
+            "error": false,
+            "Status": "Read Data",
+            "httpcode": 200,
+            "Message": "Successfully Read Data"
+        },
+        "result": {
+            "data": {
+                "name": "ibnudirsan",
+                "email": "ibnudirsan@gmail.com"
+            }
+        }
+    }
+}
+```
+
+## Publish
+Publish package configuration ```php php artisan vendor:publish --tag=handler-sanctum-config ```
+
+Secara otomatis akan membuat file ``` handler.php ```
+
+```php
+// config/handler.php
+
+<?php
+
+return [
+    
+    'hidden' => [
+        'email_verified_at',
+        'created_at',
+        'updated_at',
+    ]
+];
+
+```
+
+Note :
+
+- Di file ini bisa menambahkan atau menguragi filed yang di hidden.

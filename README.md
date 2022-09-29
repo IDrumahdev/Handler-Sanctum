@@ -38,3 +38,30 @@ $app->singleton(
 );
 
 ```
+
+Response Json : 
+Example Show
+
+```php
+// App/Http/Controllers/usersController.php
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use Illuminate\Http\Request;
+use Ibnudirsan\LaraHandlerSanctum\Halper\ResponseJson;
+
+class usersController extends Controller
+{
+    public function getDataUsers()
+    {
+        $users = User::all();
+            return ResponseJson::Show($users);
+    }
+}
+
+```
+
+Publish package configuration ``` php artisan vendor:publish --tag=handler-sanctum-config ```

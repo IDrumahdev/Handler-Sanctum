@@ -1,17 +1,16 @@
 <?php
 
+namespace Ibnudirsan\LaraHandlerSanctum\Halper;
+
 use Illuminate\Support\Facades\Facade;
+use Ibnudirsan\LaraHandlerSanctum\Halper\Facade\AuthMessage;
+
 
 class ResponseAuth extends Facade {
     
-    public function loginSuccess()
+    protected static function getFacadeAccessor()
     {
-        
-    }
-
-    public function loginInvalid()
-    {
-        # code... 403
+        return AuthMessage::class;
     }
 
 }

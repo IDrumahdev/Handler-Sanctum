@@ -39,32 +39,6 @@ $app->singleton(
 
 ```
 
-## Publish
-Publish package configuration ``` php artisan vendor:publish --tag=handler-sanctum-config ```
-
-Secara otomatis akan membuat file ``` handler.php ```
-
-```php
-// config/handler.php
-
-<?php
-
-return [
-    
-    'hidden' => [
-        'email_verified_at',
-        'created_at',
-        'updated_at',
-    ]
-];
-
-```
-
-Note :
-
-- Di file ini bisa menambahkan atau menguragi filed yang di hidden.
-
-
 ## Response Json
 
 
@@ -125,3 +99,28 @@ class usersController extends Controller
     }
 }
 ```
+
+## Publish
+Publish package configuration ```php php artisan vendor:publish --tag=handler-sanctum-config ```
+
+Secara otomatis akan membuat file ``` handler.php ```
+
+```php
+// config/handler.php
+
+<?php
+
+return [
+    
+    'hidden' => [
+        'email_verified_at',
+        'created_at',
+        'updated_at',
+    ]
+];
+
+```
+
+Note :
+
+- Di file ini bisa menambahkan atau menguragi filed yang di hidden.

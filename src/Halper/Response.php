@@ -38,7 +38,6 @@ class Response {
                         ]
                     ];
 
-
             return response()->json($response, 401);
 
         } elseif ($httpCode == 403) { //403
@@ -55,7 +54,6 @@ class Response {
                             'message'   =>$message
                             ]
                         ];
-
 
             return response()->json($response, 403);
 
@@ -83,13 +81,13 @@ class Response {
             $message     = "Check Incorrect Method";
 
             $response = [
-                                'error'     =>$errorStatus,
-                                'info'      => [
-                                    'status'    =>$status,
-                                    'httpcode'  =>405,
-                                    'message'   =>$message
-                                    ]
-                                ];
+                            'error'     =>$errorStatus,
+                            'info'      => [
+                                'status'    =>$status,
+                                'httpcode'  =>405,
+                                'message'   =>$message
+                            ]
+                        ];
 
             return response()->json($response, 405);
 
@@ -100,14 +98,13 @@ class Response {
             $message     = "Access Internal Server Error.";
 
             $response = [
-                                    'error'     =>$errorStatus,
-                                    'info'      => [
-                                        'status'    =>$status,
-                                        'httpcode'  =>500,
-                                        'message'   =>$message
-                                        ]
-                                    ];
-
+                            'error'     => $errorStatus,
+                            'info'      => [
+                                    'status'    => $status,
+                                    'httpcode'  => 500,
+                                    'message'   => $message
+                            ]
+                        ];
 
             return response()->json($response, 500);
 

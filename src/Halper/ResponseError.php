@@ -9,23 +9,24 @@ class ResponseError {
         /**
         * Handling Errors Validate
         */
-        if($validator->fails()){
+        $errorStatus = true;
+        $status      = "Bad Request";
+        $message     = $validator->errors();
 
-            $errorStatus = true;
-            $status      = "Bad Request";
-            $message     = $validator->errors();
-
-            $resultError = [
-                        'error'     => $errorStatus,
-                        'info'      => [
-                            'status'    => $status,
-                            'httpcode'  => 400,
-                            'message'   => $message
+        $response = [
+            'app'   => [
+                'info'      => [
+                    'error'     => $errorStatus,
+                    'Status'    => $status,
+                    'httpcode'  => 400
+                ],
+                'message'  => [
+                    'data'  => $message
                 ]
-            ];
+            ]
+        ];
+            return response()->json($response, 400);
 
-                return response()->json($resultError,400);
-        }
     }
 
     public function NotFound()
@@ -36,16 +37,20 @@ class ResponseError {
         $errorStatus = true;
         $status      = "Not Found";
         $message     = "Data Not Found";
-
-        $resultError = [
-                'error'     =>$errorStatus,
+    
+        $response = [
+            'app'   => [
                 'info'      => [
+                    'error'     => $errorStatus,
                     'Status'    => $status,
-                    'httpcode'  => 400,
-                    'Message'   => $message
+                    'httpcode'  => 404
+                ],
+                    'message'  => [
+                        'data'  => $message
+                ]
             ]
         ];
-            return response()->json($resultError, 404);
+            return response()->json($response, 404);
     }
 
     public function serverError()
@@ -53,18 +58,23 @@ class ResponseError {
         /**
         * Handling Internal Server Error
         */
+
         $errorStatus = true;
         $status      = "Server Error";
         $message     = "Internal Server Error";
-
-        $resultError = [    
-            'error'     =>$errorStatus,
-            'info'      => [
-                'Status'    => $status,
-                'httpcode'  => 400,
-                'Message'   => $message
+    
+        $response = [
+            'app'   => [
+                'info'      => [
+                    'error'     => $errorStatus,
+                    'Status'    => $status,
+                    'httpcode'  => 500
+                ],
+                    'message'  => [
+                        'data'  => $message
+                ]
             ]
         ];
-            return response()->json($resultError, 500);
+            return response()->json($response, 500);
     }
 }

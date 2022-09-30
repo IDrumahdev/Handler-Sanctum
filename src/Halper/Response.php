@@ -11,102 +11,120 @@ class Response {
             $errorStatus = true;
             $status      = "Bad Request";
             $message     = "Access Bad Request";
-
-            $response = [
-                'error'     =>$errorStatus,
-                'info'      => [
-                    'Status'    => $status,
-                    'httpcode'  => 400,
-                    'Message'   => $message
+    
+            $responseError = [
+                'app'   => [
+                    'info'      => [
+                        'error'     => $errorStatus,
+                        'Status'    => $status,
+                        'httpcode'  => 400
+                    ],
+                    'data'  => [
+                        'Message'   => $message
                     ]
-                ];
-
-            return response()->json($response, 400);
+                ]
+            ];
+                return response()->json($responseError, 400);
 
         } elseif ($httpCode == 401) { //401
 
             $errorStatus = true;
             $status      = "Unauthorized";
             $message     = "Unauthorized Access.";
-
-            $response = [
-                    'error'     =>$errorStatus,
+    
+            $responseError = [
+                'app'   => [
                     'info'      => [
-                        'status'    =>$status,
-                        'httpcode'  =>401,
-                        'message'   =>$message
-                        ]
-                    ];
-
-            return response()->json($response, 401);
+                        'error'     => $errorStatus,
+                        'Status'    => $status,
+                        'httpcode'  => 401
+                    ],
+                    'data'  => [
+                        'Message'   => $message
+                    ]
+                ]
+            ];
+                return response()->json($responseError, 401);
 
         } elseif ($httpCode == 403) { //403
 
             $errorStatus = true;
             $status      = "Forbidden";
-            $message     = "Access Forbidden.";
-
-            $response = [
-                        'error'     =>$errorStatus,
-                        'info'      => [
-                            'status'    =>$status,
-                            'httpcode'  =>403,
-                            'message'   =>$message
-                            ]
-                        ];
-
-            return response()->json($response, 403);
+            $message     = "Forbidden Access.";
+    
+            $responseError = [
+                'app'   => [
+                    'info'      => [
+                        'error'     => $errorStatus,
+                        'Status'    => $status,
+                        'httpcode'  => 403
+                    ],
+                    'data'  => [
+                        'Message'   => $message
+                    ]
+                ]
+            ];
+                return response()->json($responseError, 403);
 
         } elseif ($httpCode == 404) { //404
 
             $errorStatus = true;
-            $status      = "Not Fount Endpoint.";
+            $status      = "Not Fount Endpoint";
             $message     = "Check Incorrect URL.";
-
-            $response = [
-                            'error'     =>$errorStatus,
-                            'info'      => [
-                                'status'    =>$status,
-                                'httpcode'  =>404,
-                                'message'   =>$message
-                                ]
-                            ];
-
-            return response()->json($response, 404);
+    
+            $responseError = [
+                'app'   => [
+                    'info'      => [
+                        'error'     => $errorStatus,
+                        'Status'    => $status,
+                        'httpcode'  => 404
+                    ],
+                    'data'  => [
+                        'Message'   => $message
+                    ]
+                ]
+            ];
+                return response()->json($responseError, 404);
 
         } elseif ($httpCode == 405) { //405
 
             $errorStatus = true;
             $status      = "Method Not Allowed";
-            $message     = "Check Incorrect Method";
-
-            $response = [
-                            'error'     =>$errorStatus,
-                            'info'      => [
-                                'status'    =>$status,
-                                'httpcode'  =>405,
-                                'message'   =>$message
-                            ]
-                        ];
-
-            return response()->json($response, 405);
+            $message     = "Check Incorrect Method.";
+    
+            $responseError = [
+                'app'   => [
+                    'info'      => [
+                        'error'     => $errorStatus,
+                        'Status'    => $status,
+                        'httpcode'  => 405
+                    ],
+                    'data'  => [
+                        'Message'   => $message
+                    ]
+                ]
+            ];
+                return response()->json($responseError, 405);
 
         } elseif ($httpCode == 500) { //500
 
             $errorStatus = true;
-            $status      = "Internal Server Error.";
+            $status      = "Internal Server Error";
             $message     = "Access Internal Server Error.";
-
-            $response = [
-                            'error'     => $errorStatus,
-                            'info'      => [
-                                    'status'    => $status,
-                                    'httpcode'  => 500,
-                                    'message'   => $message
-                            ]
-                        ];
-
-            return response()->json($response, 500);
+    
+            $responseError = [
+                'app'   => [
+                    'info'      => [
+                        'error'     => $errorStatus,
+                        'Status'    => $status,
+                        'httpcode'  => 500
+                    ],
+                    'data'  => [
+                        'Message'   => $message
+                    ]
+                ]
+            ];
+                return response()->json($responseError, 500);
 
         }
     }

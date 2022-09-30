@@ -1,10 +1,12 @@
 <?php
 
-class ResponseAuth {
+use Illuminate\Support\Facades\Facade;
+
+class ResponseAuth extends Facade {
     
     public function loginSuccess()
     {
-        # code... 201
+        
     }
 
     public function loginInvalid()

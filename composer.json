@@ -31,5 +31,10 @@
     "require": {
         "php": "^8.0.2",
         "laravel/framework": "^9.0"
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=handler-sanctum-config"
+        ]
     }
 }

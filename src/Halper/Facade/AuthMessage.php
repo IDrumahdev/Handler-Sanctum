@@ -10,7 +10,7 @@ class AuthMessage {
     public function loginSuccess($arguments)
     {
         $errorStatus = false;
-        $status      = "Success";
+        $status      = "Created";
 
         $responseError = [
             'app'   => [
@@ -31,7 +31,7 @@ class AuthMessage {
     public function loginInvalid($arguments = ['message' => 'Login Failed to generate API Token.'])
     {
         $errorStatus = true;
-        $status      = "Invalid";
+        $status      = "Unauthorized";
 
         $responseError = [
             'app'   => [

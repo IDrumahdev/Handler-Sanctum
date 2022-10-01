@@ -69,7 +69,7 @@ class Response {
         } elseif ($httpCode == 404) { //404
 
             $errorStatus = true;
-            $status      = "Not Fount Endpoint";
+            $status      = "Not Found";
             $message     = "Check Incorrect URL.";
     
             $responseError = [

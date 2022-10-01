@@ -2,120 +2,14 @@
 
 namespace Ibnudirsan\LaraHandlerSanctum\Halper;
 
-class ResponseJson {
+use Illuminate\Support\Facades\Facade;
+use Ibnudirsan\LaraHandlerSanctum\Halper\Facade\JsonMessage;
 
-    public static function cretae($data)
+class ResponseJson extends Facade {
+
+    protected static function getFacadeAccessor()
     {
-        $errorStatus = false;
-        $status      = "Create Data";
-        $message     = "Successfully created Data";
-        $result      = $data->makeHidden(config('handler.hidden'));
-
-        $response = [
-            'app'   => [
-                'info'      => [
-                    'error'     => $errorStatus,
-                    'Status'    => $status,
-                    'httpcode'  => 201,
-                    'Message'   => $message
-                ],
-                'result'  => [
-                    'data'  => $result
-                ]
-            ]
-        ];
-            return response()->json($response, 201);
-    }
-
-    public static function read($data)
-    {
-        $errorStatus = false;
-        $status      = "Read Data";
-        $message     = "Successfully Read Data";
-        $result      = $data->makeHidden(config('handler.hidden'));
-
-        $response = [
-            'app'   => [
-                'info'      => [
-                    'error'     => $errorStatus,
-                    'Status'    => $status,
-                    'httpcode'  => 200,
-                    'Message'   => $message
-                ],
-                'result'  => [
-                    'data'  => $result
-                ]
-            ]
-        ];
-            return response()->json($response, 200);
-    }
-
-    public static function show($data)
-    {
-        $errorStatus = false;
-        $status      = "Show Data";
-        $message     = "Successfully displaying Data";
-        $result     = $data->setCollection($data->getCollection()->makeHidden(config('handler.hidden')));
-
-        $response = [
-        'app'   => [
-                'info'      => [
-                    'error'     => $errorStatus,
-                    'Status'    => $status,
-                    'httpcode'  => 200,
-                    'Message'   => $message
-                ],
-                'result'    => [
-                    'count' => $result->total(),
-                    'data'  => $result
-                ]
-            ]
-        ];
-            return response()->json($response, 200);
-    }
-
-    public static function update($data = true)
-    {
-        $errorStatus = false;
-        $status      = "Update Data";
-        $message     = "Successfully updated Data";
-
-        $response = [
-            'app'   => [
-                'info'      => [
-                    'error'     => $errorStatus,
-                    'Status'    => $status,
-                    'httpcode'  => 200,
-                    'Message'   => $message
-                ],
-                'result'  => [
-                    'updated'  => (boolean)$data
-                ]
-            ]
-        ];
-            return response()->json($response, 200);
-    }
-
-    public static function delete($data = true)
-    {
-        $errorStatus = false;
-        $status      = "Delete Data";
-        $message     = "Successfully deleted Data";
-
-        $response = [
-            'app'   => [
-                'info'      => [
-                    'error'     => $errorStatus,
-                    'Status'    => $status,
-                    'httpcode'  => 200,
-                    'Message'   => $message
-                ],
-                'result'  => [
-                    'updated'  => (boolean)$data
-                ]
-            ]
-        ];
-            return response()->json($response, 200);
+        return JsonMessage::class;
     }
 
 }

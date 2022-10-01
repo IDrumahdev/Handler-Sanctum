@@ -7,10 +7,10 @@ class LogMessage {
     /**
     * Handling Method Default Success
     */
-    public static function Success($arguments = ["message" => "Data Process Successfully"])
+    public static function Success($arguments = ["message" => "Data Process Successfully."])
     {
         $errorStatus = false;
-        $status      = "Success";
+        $status      = "OK";
 
         $responseError = [
             'app'   => [

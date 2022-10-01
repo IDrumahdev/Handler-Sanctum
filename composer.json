@@ -35,8 +35,10 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi",
-            "@php artisan vendor:publish --tag=handler-sanctum-config--force"
+            "@php artisan package:discover --ansi"
+         ],
+         "post-update-cmd": [
+             "@php artisan vendor:publish --tag=handler-sanctum-config --ansi --force"
          ]
-       }
+    }
 }

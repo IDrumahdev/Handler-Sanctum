@@ -36,9 +36,10 @@ class HandlerSanctumException extends Handler
         if ($request->is(config('handler.prefix.api'))) {
             if ($exception instanceof HttpExceptionInterface) {
                 $statusCode = $exception->getStatusCode();
-                return Response::Status($statusCode);
+                    return Response::Status($statusCode);
             } else {
-                    $statusCode = 500;
+                $statusCode = 500;
+                    return Response::Status($statusCode);
             }
         }
             if ($request->is(config('handler.prefix.api')) && auth('sanctum')->check() == false || empty($request->header('Authorization'))){

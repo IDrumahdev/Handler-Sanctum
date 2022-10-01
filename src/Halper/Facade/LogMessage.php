@@ -4,7 +4,10 @@ namespace Ibnudirsan\LaraHandlerSanctum\Halper\Facade;
 
 class LogMessage {
 
-    public static function Success($arguments)
+    /**
+    * Handling Method Default Success
+    */
+    public static function Success($arguments = ["message" => "Data Process Successfully"])
     {
         $errorStatus = false;
         $status      = "Success";

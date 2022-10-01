@@ -4,6 +4,9 @@ namespace Ibnudirsan\LaraHandlerSanctum\Halper\Facade;
 
 class AuthMessage {
 
+    /**
+    * Handling Login Success
+    */
     public function loginSuccess($arguments)
     {
         $errorStatus = false;
@@ -22,7 +25,10 @@ class AuthMessage {
             return response()->json($responseError, 201);
     }
 
-    public function loginInvalid($arguments)
+    /**
+    * Handling login Invalid
+    */
+    public function loginInvalid($arguments = ['message' => 'Login Failed to generate API Token.'])
     {
         $errorStatus = true;
         $status      = "Invalid";

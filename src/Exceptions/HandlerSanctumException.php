@@ -4,10 +4,11 @@ namespace Ibnudirsan\LaraHandlerSanctum\Exceptions;
 
 use Throwable;
 
+use Illuminate\Foundation\Exceptions\Handler;
 use Ibnudirsan\LaraHandlerSanctum\Halper\Exception\Response;
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
-class HandlerSanctumException extends ExceptionHandler
+class HandlerSanctumException extends Handler
 {
     /**
      * Report or log an exception.
@@ -32,19 +33,17 @@ class HandlerSanctumException extends ExceptionHandler
      * @throws \Throwable
      */
     public function render($request, Throwable $exception) {
-
         if ($request->is(config('handler.prefix.api'))) {
-            if (method_exists($exception, 'getStatusCode')) {
-                $statusCode = $this->prepareException($exception)->getStatusCode();
+            if ($exception instanceof HttpExceptionInterface) {
+                $statusCode = $exception->getStatusCode();
                 return Response::Status($statusCode);
             } else {
                     $statusCode = 500;
             }
         }
-
-        if ($request->is(config('handler.prefix.api')) && auth('sanctum')->check() == false || empty($request->header('Authorization'))){
-            return Response::Status(401);
-        }
-            return parent::render($request, $exception);
+            if ($request->is(config('handler.prefix.api')) && auth('sanctum')->check() == false || empty($request->header('Authorization'))){
+                return Response::Status(401);
+            }
+                return parent::render($request, $exception);
     }
 }

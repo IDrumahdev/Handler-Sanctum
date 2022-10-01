@@ -3,7 +3,8 @@
 namespace Ibnudirsan\LaraHandlerSanctum\Exceptions;
 
 use Throwable;
-use Ibnudirsan\LaraHandlerSanctum\Halper\Response;
+
+use Ibnudirsan\LaraHandlerSanctum\Halper\Exception\Response;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class HandlerSanctumException extends ExceptionHandler
@@ -31,7 +32,8 @@ class HandlerSanctumException extends ExceptionHandler
      * @throws \Throwable
      */
     public function render($request, Throwable $exception) {
-        if ($request->is('api/*')) {
+
+        if ($request->is(config('handler.prefix.api'))) {
             if (method_exists($exception, 'getStatusCode')) {
                 $statusCode = $this->prepareException($exception)->getStatusCode();
                 return Response::Status($statusCode);
@@ -40,7 +42,7 @@ class HandlerSanctumException extends ExceptionHandler
             }
         }
 
-        if ($request->is('api/*') && auth('sanctum')->check() == false || empty($request->header('Authorization'))){
+        if ($request->is(config('handler.prefix.api')) && auth('sanctum')->check() == false || empty($request->header('Authorization'))){
             return Response::Status(401);
         }
             return parent::render($request, $exception);

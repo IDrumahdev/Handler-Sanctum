@@ -3,7 +3,7 @@
 namespace Ibnudirsan\LaraHandlerSanctum\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
-use Ibnudirsan\LaraHandlerSanctum\Halper\Response;
+use Ibnudirsan\LaraHandlerSanctum\Halper\Exception\Response;
 
 class HandlerSanctum extends ServiceProvider
 {

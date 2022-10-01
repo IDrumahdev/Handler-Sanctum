@@ -8,9 +8,6 @@ class AuthMessage {
     {
         $errorStatus = false;
         $status      = "Success";
-        $username    = $arguments['name'];
-        $token       = $arguments['token'];
-        $message     = $arguments['message'];
 
         $responseError = [
             'app'   => [
@@ -19,11 +16,7 @@ class AuthMessage {
                     'Status'    => $status,
                     'httpcode'  => 201
                 ],
-                'data'  => [
-                    'username'  => $username,      
-                    'token'     => $token,
-                    'message'   => $message
-                ]
+                'data'  => $arguments
             ]
         ];
             return response()->json($responseError, 201);
@@ -33,7 +26,6 @@ class AuthMessage {
     {
         $errorStatus = true;
         $status      = "Invalid";
-        $message     = $arguments['message'];
 
         $responseError = [
             'app'   => [
@@ -43,7 +35,7 @@ class AuthMessage {
                     'httpcode'  => 401
                 ],
                 'data'  => [
-                    'message'   => $message
+                    'message'   => $arguments
                 ]
             ]
         ];

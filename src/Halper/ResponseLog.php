@@ -2,11 +2,14 @@
 
 namespace Ibnudirsan\LaraHandlerSanctum\Halper;
 
-class ResponseLog {
+use Illuminate\Support\Facades\Facade;
+use Ibnudirsan\LaraHandlerSanctum\Halper\Facade\LogMessage;
 
-    public static function Success($message)
+class ResponseLog extends Facade {
+
+    protected static function getFacadeAccessor()
     {
-        # code...
+        return LogMessage::class;
     }
 
 }

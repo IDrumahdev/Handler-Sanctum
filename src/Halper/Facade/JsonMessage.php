@@ -9,7 +9,7 @@ class JsonMessage {
         $errorStatus = false;
         $status      = "Created";
         $message     = "Successfully created Data";
-        $result      = $data->makeHidden(config('handler.hidden'));
+        $result      = $data->makeHidden(config('HandlerSanctum.hidden'));
 
         $response = [
             'app'   => [
@@ -32,7 +32,7 @@ class JsonMessage {
         $errorStatus = false;
         $status      = "OK";
         $message     = "Successfully Read Data";
-        $result      = $data->makeHidden(config('handler.hidden'));
+        $result      = $data->makeHidden(config('HandlerSanctum.hidden'));
 
         $response = [
             'app'   => [
@@ -55,7 +55,7 @@ class JsonMessage {
         $errorStatus = false;
         $status      = "OK";
         $message     = "Successfully displaying Data";
-        $result     = $data->setCollection($data->getCollection()->makeHidden(config('handler.hidden')));
+        $result     = $data->setCollection($data->getCollection()->makeHidden(config('HandlerSanctum.hidden')));
 
         $response = [
         'app'   => [

@@ -3,7 +3,6 @@
 namespace Ibnudirsan\LaraHandlerSanctum\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
-use Ibnudirsan\LaraHandlerSanctum\Halper\Exception\Response;
 
 class HandlerSanctum extends ServiceProvider
 {
@@ -11,25 +10,28 @@ class HandlerSanctum extends ServiceProvider
      * Register services.
      *
      */
-    public function register()
+    public function register(): void
     {
-        $this->app->bind(Response::class);
-        $this->mergeConfigFrom(__DIR__.'/../config/ibnuDirsanSanctum.php', 'sanctum-config-ibnudirsan');
+        //
     }
 
     /**
      * Bootstrap services.
      *
      */
-    public function boot()
+    public function boot(): void
     {
-        if ($this->app->runningInConsole()) {
+        $this->registerConfig();
+        $this->publishes([
+            __DIR__.'/../../config/HandlerSanctum.php' => config_path('HandlerSanctum.php'),
+        ], 'sanctum-handler-ibnudirsan');
+    }
 
-            $this->publishes([
-              __DIR__.'/../config/ibnuDirsanSanctum.php' => config_path('ibnuDirsanSanctum.php'),
-            ], 'config');
-        
-        }
+    protected function registerConfig(): void
+    {
+        $this->mergeConfigFrom(__DIR__.'/../../config/HandlerSanctum.php',
+            'sanctum-handler-ibnudirsan'
+        );
     }
 
 }

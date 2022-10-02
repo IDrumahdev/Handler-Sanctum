@@ -24,9 +24,14 @@ class HandlerSanctum extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/ibnuDirsanSanctum.php',
+            'LaraHandlerSanctum'
+        );
+
         $this->publishes([
             __DIR__ . '/../config' => config_path(),
-        ],'handler-sanctum-config');
+        ],'sanctum-config-ibnudirsan');
     }
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ibnudirsan\LaraHandlerSanctum\Halper;
+namespace Ibnudirsan\LaraHandlerSanctum\Halper\Response;
 
 use Ibnudirsan\LaraHandlerSanctum\Halper\Facade\ErrorMessge;
 use Illuminate\Support\Facades\Facade;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ibnudirsan\LaraHandlerSanctum\Halper;
+namespace Ibnudirsan\LaraHandlerSanctum\Halper\Response;
 
 use Illuminate\Support\Facades\Facade;
 use Ibnudirsan\LaraHandlerSanctum\Halper\Facade\AuthMessage;

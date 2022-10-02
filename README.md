@@ -1,4 +1,4 @@
-# Laravel Sanctum API Handler
+# Laravel Handler Sanctum
 
 [![Latest Version on Packagist](https://img.shields.io/github/v/release/ibnudirsan/Lara-Handler-Sanctum?style=plastic)](https://packagist.org/packages/ibnudirsan/handle-http-api)
 ![Size Code on Packagist](https://img.shields.io/github/languages/code-size/ibnudirsan/Lara-Handler-Sanctum?style=plastic)

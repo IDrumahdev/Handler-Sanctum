@@ -13,12 +13,13 @@ class HandlerSanctum extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton('Ibnudirsan\HandlerSanctum\Commands', function($app) {
-            return $app[
-                'Ibnudirsan\HandlerSanctum\Commands\versionCommand',
-                'Ibnudirsan\HandlerSanctum\Commands\publishCommand'
-            ];
+            return $app['Ibnudirsan\HandlerSanctum\Commands\versionCommand'];
         });
-        $this->commands('Ibnudirsan\HandlerSanctum\Commands');
+
+        $this->app->singleton('Ibnudirsan\HandlerSanctum\Commands', function($app) {
+            return $app['Ibnudirsan\HandlerSanctum\Commands\publishCommand'];
+        });
+            $this->commands('Ibnudirsan\HandlerSanctum\Commands');
     }
 
     /**

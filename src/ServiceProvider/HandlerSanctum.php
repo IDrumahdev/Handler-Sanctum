@@ -15,6 +15,7 @@ class HandlerSanctum extends ServiceProvider
      */
     public function register(): void
     {
+        $this->mergeConfigFrom(__DIR__ . '/../../config/HandlerSanctum.php', 'HandlerSanctum');
         $this->commands([
             publishCommand::class,
             versionCommand::class

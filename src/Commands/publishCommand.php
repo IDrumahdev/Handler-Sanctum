@@ -29,9 +29,10 @@ class publishCommand extends Command
     public function handle()
     {
         try {
-            Artisan::call("php artisan vendor:publish --tag=sanctum-handler-ibnudirsan");
+            Artisan::call("vendor:publish --tag=sanctum-handler-ibnudirsan");
+            $this->line('Oke');
         } catch (\Exception $exception) {
-            //throw $th;
+            $this->line('Error');
         }
     }
 }

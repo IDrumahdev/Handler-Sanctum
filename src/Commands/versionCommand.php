@@ -12,7 +12,7 @@ class versionCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'version:HandlerSanctum';
+    protected $signature = 'HandlerSanctum:version';
 
     /**
      * The console command description.

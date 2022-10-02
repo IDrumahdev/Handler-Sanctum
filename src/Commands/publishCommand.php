@@ -12,7 +12,7 @@ class publishCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'config:publish';
+    protected $signature = 'HandlerSanctum:config';
 
     /**
      * The console command description.
@@ -30,9 +30,9 @@ class publishCommand extends Command
     {
         try {
             Artisan::call("vendor:publish --tag=sanctum-handler-ibnudirsan");
-            $this->line('Oke');
+            $this->components->info('Successfully publish config HandlerSanctum Package');
         } catch (\Exception $exception) {
-            $this->line('Error');
+            $this->components->error('Error publish config HandlerSanctum Package');
         }
     }
 }

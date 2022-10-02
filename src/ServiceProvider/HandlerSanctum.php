@@ -2,7 +2,6 @@
 
 namespace Ibnudirsan\HandlerSanctum\ServiceProvider;
 
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
 use Ibnudirsan\HandlerSanctum\Commands\publishCommand;
 use Ibnudirsan\HandlerSanctum\Commands\versionCommand;

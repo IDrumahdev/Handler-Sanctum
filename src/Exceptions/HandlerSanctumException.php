@@ -33,11 +33,11 @@ class HandlerSanctumException extends Handler
      * @throws \Throwable
      */
     public function render($request, Throwable $exception) {
-        if ($request->is(config('handler.prefix.api'))) {
+        if ($request->is(config('ibnuDirsanSanctum.prefix.api'))) {
             if ($exception instanceof HttpExceptionInterface) {
                 $statusCode = $exception->getStatusCode();
                     return Response::Status($statusCode);
-            } elseif ($request->is(config('handler.prefix.api')) && auth('sanctum')->check() == false || empty($request->header('Authorization'))){
+            } elseif ($request->is(config('ibnuDirsanSanctum.prefix.api')) && auth('sanctum')->check() == false || empty($request->header('Authorization'))){
                     return Response::Status(401);
             } else {
                 $statusCode = 500;

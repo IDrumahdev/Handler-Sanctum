@@ -3,6 +3,7 @@
 namespace Ibnudirsan\HandlerSanctum\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Artisan;
 
 class HandlerSanctum extends ServiceProvider
 {
@@ -28,6 +29,7 @@ class HandlerSanctum extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->CommandPublish();
         $this->registerConfig();
         $this->publishes([
             __DIR__.'/../../config/HandlerSanctum.php' => config_path('HandlerSanctum.php'),
@@ -39,6 +41,11 @@ class HandlerSanctum extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../../config/HandlerSanctum.php',
             'sanctum-handler-ibnudirsan'
         );
+    }
+
+    protected function CommandPublish(): void
+    {
+        Artisan::call("vendor:publish --tag=sanctum-handler-ibnudirsan");
     }
 
 }

@@ -15,11 +15,9 @@
         }
     },
     "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi",
-            "@php artisan vendor:publish --tag={sanctum-config-ibnudirsan}--force"
-         ]
+        "post-install-cmd": [
+            "php artisan HandlerSanctum:config"
+        ]
     },
     "extra": {
         "laravel": {

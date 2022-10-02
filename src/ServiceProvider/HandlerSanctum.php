@@ -2,7 +2,10 @@
 
 namespace Ibnudirsan\HandlerSanctum\ServiceProvider;
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
+use Ibnudirsan\HandlerSanctum\Commands\publishCommand;
+use Ibnudirsan\HandlerSanctum\Commands\versionCommand;
 
 class HandlerSanctum extends ServiceProvider
 {
@@ -12,14 +15,10 @@ class HandlerSanctum extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton('Ibnudirsan\HandlerSanctum\Commands', function($app) {
-            return $app['Ibnudirsan\HandlerSanctum\Commands\versionCommand'];
-        });
-
-        $this->app->singleton('Ibnudirsan\HandlerSanctum\Commands', function($app) {
-            return $app['Ibnudirsan\HandlerSanctum\Commands\publishCommand'];
-        });
-            $this->commands('Ibnudirsan\HandlerSanctum\Commands');
+        $this->commands([
+            publishCommand::class,
+            versionCommand::class
+        ]);
     }
 
     /**

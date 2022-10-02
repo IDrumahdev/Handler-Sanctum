@@ -34,7 +34,7 @@ class versionCommand extends Command
             $this->line('<bg=black;fg=white>..:: Created by ibnudirsan ::..</>');
             $this->newLine();
         } catch (\Exception $exception) {
-            //throw $th;
+            $this->components->error('Error Chaecking Package Version.');
         }
     }
 }

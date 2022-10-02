@@ -15,7 +15,7 @@ class HandlerSanctum extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../../config/HandlerSanctum.php', 'HandlerSanctum');
+        $this->registerConfig();
         $this->commands([
             publishCommand::class,
             versionCommand::class
@@ -28,7 +28,6 @@ class HandlerSanctum extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->registerConfig();
         $this->publishes([
             __DIR__.'/../../config/HandlerSanctum.php' => config_path('HandlerSanctum.php'),
         ], 'sanctum-handler-ibnudirsan');
@@ -36,9 +35,7 @@ class HandlerSanctum extends ServiceProvider
 
     protected function registerConfig(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../../config/HandlerSanctum.php',
-            'sanctum-handler-ibnudirsan'
-        );
+        $this->mergeConfigFrom(__DIR__ . '/../../config/HandlerSanctum.php', 'HandlerSanctum');
     }
 
 }

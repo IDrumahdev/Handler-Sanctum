@@ -28,7 +28,12 @@
         "laravel": {
             "providers": [
                 "Ibnudirsan\\HandlerSanctum\\ServiceProvider\\HandlerSanctum"
-            ]
+            ],
+            "scripts": {
+                 "post-create-project-cmd": [
+                     "@php artisan config:publish --ansi"
+                 ]
+            }
         }
     },
     "authors": [

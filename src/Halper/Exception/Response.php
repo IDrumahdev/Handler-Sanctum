@@ -1,6 +1,6 @@
 <?php
 
-namespace Ibnudirsan\LaraHandlerSanctum\Halper\Exception;
+namespace Ibnudirsan\HandlerSanctum\Halper\Exception;
 
 class Response {
     

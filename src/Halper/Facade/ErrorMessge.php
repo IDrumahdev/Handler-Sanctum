@@ -1,6 +1,6 @@
 <?php
 
-namespace Ibnudirsan\LaraHandlerSanctum\Halper\Facade;
+namespace Ibnudirsan\HandlerSanctum\Halper\Facade;
 
 class ErrorMessge {
 

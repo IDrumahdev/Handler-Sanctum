@@ -101,7 +101,7 @@ class usersController extends Controller
 ```
 
 ## Publish
-Publish package configuration ```php artisan vendor:publish --tag=sanctum-handler-ibnudirsan ```
+Publish package configuration ```php php artisan vendor:publish --tag=handler-sanctum-config ```
 
 Secara otomatis akan membuat file ``` handler.php ```
 

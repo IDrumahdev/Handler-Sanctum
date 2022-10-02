@@ -1,8 +1,8 @@
 <?php
 
-namespace Ibnudirsan\LaraHandlerSanctum\Halper\Response;
+namespace Ibnudirsan\HandlerSanctum\Halper\Response;
 
-use Ibnudirsan\LaraHandlerSanctum\Halper\Facade\ErrorMessge;
+use Ibnudirsan\HandlerSanctum\Halper\Facade\ErrorMessge;
 use Illuminate\Support\Facades\Facade;
 
 class ResponseError extends Facade {

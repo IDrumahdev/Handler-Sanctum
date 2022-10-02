@@ -1,6 +1,6 @@
 <?php
 
-namespace Ibnudirsan\LaraHandlerSanctum\ServiceProvider;
+namespace Ibnudirsan\HandlerSanctum\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -12,7 +12,10 @@ class HandlerSanctum extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton('Ibnudirsan\HandlerSanctum\Commands', function($app) {
+            return $app['Ibnudirsan\HandlerSanctum\Commands\versionCommand'];
+        });
+        $this->commands('Ibnudirsan\HandlerSanctum\Commands');
     }
 
     /**

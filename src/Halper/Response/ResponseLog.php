@@ -1,9 +1,9 @@
 <?php
 
-namespace Ibnudirsan\LaraHandlerSanctum\Halper\Response;
+namespace Ibnudirsan\HandlerSanctum\Halper\Response;
 
 use Illuminate\Support\Facades\Facade;
-use Ibnudirsan\LaraHandlerSanctum\Halper\Facade\LogMessage;
+use Ibnudirsan\HandlerSanctum\Halper\Facade\LogMessage;
 
 class ResponseLog extends Facade {
 

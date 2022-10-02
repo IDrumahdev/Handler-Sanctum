@@ -11,7 +11,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Ibnudirsan\\LaraHandlerSanctum\\": "src/"
+            "Ibnudirsan\\HandlerSanctum\\": "src/"
         }
     },
     "scripts": {
@@ -24,7 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ibnudirsan\\LaraHandlerSanctum\\ServiceProvider\\HandlerSanctum"
+                "Ibnudirsan\\HandlerSanctum\\ServiceProvider\\HandlerSanctum"
             ]
         }
     },

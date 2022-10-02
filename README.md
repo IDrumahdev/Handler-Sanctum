@@ -9,7 +9,7 @@
 ![license on Packagist](https://img.shields.io/github/license/ibnudirsan/Lara-Handler-Sanctum?style=plastic)
 
 ## Cara menggunakannya :
-install Package ``` composer require ibnudirsan/lara-handler-sanctum ```
+install Package ``` composer require ibnudirsan/handler-sanctum ```
 
 Ganti baris kode program ini :
 

@@ -12,17 +12,17 @@
     "autoload": {
         "psr-4": {
             "Ibnudirsan\\HandlerSanctum\\": "src/"
+        },
+        "scripts": {
+            "post-install-cmd": [
+                "php artisan HandlerSanctum:config"
+            ]
         }
     },
     "extra": {
         "laravel": {
             "providers": [
                 "Ibnudirsan\\HandlerSanctum\\ServiceProvider\\HandlerSanctum"
-            ]
-        },
-        "scripts": {
-            "post-install-cmd": [
-                "php artisan HandlerSanctum:config"
             ]
         }
     },

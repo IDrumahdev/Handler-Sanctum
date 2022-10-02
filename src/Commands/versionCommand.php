@@ -4,7 +4,6 @@ namespace Ibnudirsan\HandlerSanctum\Commands;
 
 use Composer\InstalledVersions;
 use Illuminate\Console\Command;
-use PhpParser\Node\Stmt\TryCatch;
 
 class versionCommand extends Command
 {
@@ -34,7 +33,7 @@ class versionCommand extends Command
             $this->components->info("Handler Sanctum Package Version <bg=blue;fg=white> $version </>");
             $this->line('<bg=black;fg=white>..:: Created by ibnudirsan ::..</>');
             $this->newLine();
-        } catch (\Throwable $th) {
+        } catch (\Exception $exception) {
             //throw $th;
         }
     }

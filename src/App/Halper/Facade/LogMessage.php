@@ -13,7 +13,7 @@ class LogMessage {
         $status      = "OK";
 
         $responseError = [
-            'app'   => [
+            config('HandlerSanctum.prefix.name') => [
                 'info'      => [
                     'error'     => $errorStatus,
                     'Status'    => $status,

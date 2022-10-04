@@ -9,6 +9,7 @@ return [
     ],
 
     'prefix'  => [
-        'api'  => 'api/*'
+        'api'   => 'api/*',
+        'name'  => 'app'
     ]
 ];

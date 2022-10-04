@@ -14,7 +14,7 @@ class ErrorMessge {
         $message     = $validator->errors();
 
         $response = [
-            'app'   => [
+            config('HandlerSanctum.prefix.name') => [
                 'info'      => [
                     'error'     => $errorStatus,
                     'Status'    => $status,
@@ -38,7 +38,7 @@ class ErrorMessge {
         $status      = "Not Found";
     
         $response = [
-            'app'   => [
+            config('HandlerSanctum.prefix.name') => [
                 'info'      => [
                     'error'     => $errorStatus,
                     'Status'    => $status,
@@ -62,7 +62,7 @@ class ErrorMessge {
         $status      = "Server Error";
     
         $response = [
-            'app'   => [
+            config('HandlerSanctum.prefix.name') => [
                 'info'      => [
                     'error'     => $errorStatus,
                     'Status'    => $status,

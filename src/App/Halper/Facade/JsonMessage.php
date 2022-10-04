@@ -12,7 +12,7 @@ class JsonMessage {
         $result      = $data->makeHidden(config('HandlerSanctum.hidden'));
 
         $response = [
-            'app'   => [
+            config('HandlerSanctum.prefix.name') => [
                 'info'      => [
                     'error'     => $errorStatus,
                     'Status'    => $status,
@@ -35,7 +35,7 @@ class JsonMessage {
         $result      = $data->makeHidden(config('HandlerSanctum.hidden'));
 
         $response = [
-            'app'   => [
+            config('HandlerSanctum.prefix.name') => [
                 'info'      => [
                     'error'     => $errorStatus,
                     'Status'    => $status,
@@ -58,7 +58,7 @@ class JsonMessage {
         $result     = $data->setCollection($data->getCollection()->makeHidden(config('HandlerSanctum.hidden')));
 
         $response = [
-        'app'   => [
+        config('HandlerSanctum.prefix.name') => [
                 'info'      => [
                     'error'     => $errorStatus,
                     'Status'    => $status,
@@ -80,7 +80,7 @@ class JsonMessage {
         $status      = "OK";
 
         $response = [
-            'app'   => [
+            config('HandlerSanctum.prefix.name') => [
                 'info'      => [
                     'error'     => $errorStatus,
                     'Status'    => $status,
@@ -101,7 +101,7 @@ class JsonMessage {
         $status      = "OK";
 
         $response = [
-            'app'   => [
+            config('HandlerSanctum.prefix.name') => [
                 'info'      => [
                     'error'     => $errorStatus,
                     'Status'    => $status,

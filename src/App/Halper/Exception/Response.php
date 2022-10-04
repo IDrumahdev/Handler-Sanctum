@@ -13,7 +13,7 @@ class Response {
             $message     = "Access Bad Request";
     
             $responseError = [
-                'app'   => [
+                config('HandlerSanctum.prefix.name') => [
                     'info'      => [
                         'error'     => $errorStatus,
                         'Status'    => $status,
@@ -33,7 +33,7 @@ class Response {
             $message     = "Unauthorized Access.";
     
             $responseError = [
-                'app'   => [
+                config('HandlerSanctum.prefix.name') => [
                     'info'      => [
                         'error'     => $errorStatus,
                         'Status'    => $status,
@@ -53,7 +53,7 @@ class Response {
             $message     = "Forbidden Access.";
     
             $responseError = [
-                'app'   => [
+                config('HandlerSanctum.prefix.name') => [
                     'info'      => [
                         'error'     => $errorStatus,
                         'Status'    => $status,
@@ -73,7 +73,7 @@ class Response {
             $message     = "Check Incorrect URL.";
     
             $responseError = [
-                'app'   => [
+                config('HandlerSanctum.prefix.name') => [
                     'info'      => [
                         'error'     => $errorStatus,
                         'Status'    => $status,
@@ -93,7 +93,7 @@ class Response {
             $message     = "Check Incorrect Method.";
     
             $responseError = [
-                'app'   => [
+                config('HandlerSanctum.prefix.name') => [
                     'info'      => [
                         'error'     => $errorStatus,
                         'Status'    => $status,
@@ -113,7 +113,7 @@ class Response {
             $message     = "Access Internal Server Error.";
     
             $responseError = [
-                'app'   => [
+                config('HandlerSanctum.prefix.name') => [
                     'info'      => [
                         'error'     => $errorStatus,
                         'Status'    => $status,

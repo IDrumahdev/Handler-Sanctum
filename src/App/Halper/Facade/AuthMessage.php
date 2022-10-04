@@ -12,7 +12,7 @@ class AuthMessage {
         $status      = "Created";
 
         $responseError = [
-            'app'   => [
+            config('HandlerSanctum.prefix.name') => [
                 'info'      => [
                     'error'     => $errorStatus,
                     'Status'    => $status,
@@ -33,7 +33,7 @@ class AuthMessage {
         $status      = "Unauthorized";
 
         $responseError = [
-            'app'   => [
+            config('HandlerSanctum.prefix.name') => [
                 'info'      => [
                     'error'     => $errorStatus,
                     'Status'    => $status,

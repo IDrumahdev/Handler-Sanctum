@@ -29,13 +29,13 @@ class HandlerSanctumProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__.'/../config/HandlerSanctum.php' => config_path('HandlerSanctum.php'),
+            __DIR__.'/../../Config/HandlerSanctum.php' => config_path('HandlerSanctum.php'),
         ], 'sanctum-handler-ibnudirsan');
     }
 
     protected function registerConfig(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/HandlerSanctum.php', 'HandlerSanctum');
+        $this->mergeConfigFrom(__DIR__ . '/../../Config/HandlerSanctum.php', 'HandlerSanctum');
     }
 
 }

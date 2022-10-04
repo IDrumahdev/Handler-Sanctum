@@ -1,10 +1,10 @@
 <?php
 
-namespace Ibnudirsan\HandlerSanctum\Exceptions;
+namespace Ibnudirsan\HandlerSanctum\App\Exceptions;
 
 use Throwable;
 use Illuminate\Foundation\Exceptions\Handler;
-use Ibnudirsan\HandlerSanctum\Halper\Exception\Response;
+use Ibnudirsan\HandlerSanctum\App\Halper\Exception\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
 class HandlerSanctumException extends Handler

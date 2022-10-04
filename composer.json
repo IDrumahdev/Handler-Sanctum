@@ -17,7 +17,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ibnudirsan\\HandlerSanctum\\ServiceProvider\\HandlerSanctum"
+                "Ibnudirsan\\HandlerSanctum\\Providers\\HandlerSanctumProvider"
             ]
         }
     },

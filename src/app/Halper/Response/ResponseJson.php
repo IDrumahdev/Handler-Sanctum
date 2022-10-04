@@ -1,9 +1,9 @@
 <?php
 
-namespace Ibnudirsan\HandlerSanctum\Halper\Response;
+namespace Ibnudirsan\HandlerSanctum\App\Halper\Response;
 
 use Illuminate\Support\Facades\Facade;
-use Ibnudirsan\HandlerSanctum\Halper\Facade\JsonMessage;
+use Ibnudirsan\HandlerSanctum\App\Halper\Facade\JsonMessage;
 
 class ResponseJson extends Facade {
 

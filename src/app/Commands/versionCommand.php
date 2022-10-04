@@ -1,6 +1,6 @@
 <?php
 
-namespace Ibnudirsan\HandlerSanctum\Commands;
+namespace Ibnudirsan\HandlerSanctum\App\Commands;
 
 use Composer\InstalledVersions;
 use Illuminate\Console\Command;

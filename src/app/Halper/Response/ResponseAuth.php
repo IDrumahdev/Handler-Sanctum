@@ -1,9 +1,9 @@
 <?php
 
-namespace Ibnudirsan\HandlerSanctum\Halper\Response;
+namespace Ibnudirsan\HandlerSanctum\App\Halper\Response;
 
 use Illuminate\Support\Facades\Facade;
-use Ibnudirsan\HandlerSanctum\Halper\Facade\AuthMessage;
+use Ibnudirsan\HandlerSanctum\App\Halper\Facade\AuthMessage;
 
 
 class ResponseAuth extends Facade {

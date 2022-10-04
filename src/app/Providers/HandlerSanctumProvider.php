@@ -1,12 +1,13 @@
 <?php
 
-namespace Ibnudirsan\HandlerSanctum\ServiceProvider;
+namespace Ibnudirsan\HandlerSanctum\App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Ibnudirsan\HandlerSanctum\Commands\publishCommand;
-use Ibnudirsan\HandlerSanctum\Commands\versionCommand;
+use Ibnudirsan\HandlerSanctum\App\Commands\publishCommand;
+use Ibnudirsan\HandlerSanctum\App\Commands\versionCommand;
 
-class HandlerSanctum extends ServiceProvider
+
+class HandlerSanctumProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -28,13 +29,13 @@ class HandlerSanctum extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__.'/../../config/HandlerSanctum.php' => config_path('HandlerSanctum.php'),
+            __DIR__.'/../config/HandlerSanctum.php' => config_path('HandlerSanctum.php'),
         ], 'sanctum-handler-ibnudirsan');
     }
 
     protected function registerConfig(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../../config/HandlerSanctum.php', 'HandlerSanctum');
+        $this->mergeConfigFrom(__DIR__ . '/../config/HandlerSanctum.php', 'HandlerSanctum');
     }
 
 }

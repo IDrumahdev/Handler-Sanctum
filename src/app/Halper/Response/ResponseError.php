@@ -1,9 +1,10 @@
 <?php
 
-namespace Ibnudirsan\HandlerSanctum\Halper\Response;
+namespace Ibnudirsan\HandlerSanctum\App\Halper\Response;
 
-use Ibnudirsan\HandlerSanctum\Halper\Facade\ErrorMessge;
+
 use Illuminate\Support\Facades\Facade;
+use Ibnudirsan\HandlerSanctum\App\Halper\Facade\ErrorMessge;
 
 class ResponseError extends Facade {
 

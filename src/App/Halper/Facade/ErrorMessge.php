@@ -29,7 +29,7 @@ class ErrorMessge {
 
     }
 
-    public function NotFound($arguments = ["message" => "Data Not Found"])
+    public static function NotFound($arguments = ["message" => "Data Not Found"])
     {
         /**
         * Handling Errors Not Found
@@ -52,7 +52,7 @@ class ErrorMessge {
             return response()->json($response, 404);
     }
 
-    public function serverError($arguments = ["message" => "Internal Server Error"])
+    public static function serverError($arguments = ["message" => "Internal Server Error"])
     {
         /**
         * Handling Internal Server Error

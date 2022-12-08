@@ -6,7 +6,7 @@ class AuthMessage {
     /**
     * Handling Login Success
     */
-    public function loginSuccess($arguments)
+    public static function loginSuccess($arguments)
     {
         $errorStatus = false;
         $status      = "Created";
@@ -27,7 +27,7 @@ class AuthMessage {
     /**
     * Handling login Invalid
     */
-    public function loginInvalid($arguments = ['message' => 'Login Failed to generate API Token.'])
+    public static function loginInvalid($arguments = ['message' => 'Login Failed to generate API Token.'])
     {
         $errorStatus = true;
         $status      = "Unauthorized";

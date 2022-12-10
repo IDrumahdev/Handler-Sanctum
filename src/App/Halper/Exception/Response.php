@@ -106,6 +106,25 @@ class Response {
             ];
                 return response()->json($responseError, 405);
 
+        } elseif ($httpCode == 429) {
+            $errorStatus = true;
+            $status      = "Too Many Requests";
+            $message     = "Many Requests.";
+    
+            $responseError = [
+                config('HandlerSanctum.prefix.name') => [
+                    'info'      => [
+                        'error'     => $errorStatus,
+                        'Status'    => $status,
+                        'httpcode'  => 429
+                    ],
+                    'data'  => [
+                        'Message'   => $message
+                    ]
+                ]
+            ];
+                return response()->json($responseError, 429);
+
         } elseif ($httpCode == 500) { //500
 
             $errorStatus = true;

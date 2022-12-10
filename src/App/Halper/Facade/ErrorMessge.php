@@ -52,6 +52,27 @@ class ErrorMessge {
             return response()->json($response, 404);
     }
 
+    public static function Error($arguments)
+    {
+        /**
+        * Handling Errors Custom.
+        */
+        $errorStatus = true;
+        $response = [
+            config('HandlerSanctum.prefix.name') => [
+                'info'      => [
+                    'error'     => $errorStatus,
+                    'Status'    => $arguments["status"],
+                    'httpcode'  => $arguments["httpcode"]
+                ],
+                    'message'  => [
+                        'data'  => $arguments["message"]
+                ]
+            ]
+        ];
+            return response()->json($response, 404);
+    }
+
     public static function serverError($arguments = ["message" => "Internal Server Error"])
     {
         /**

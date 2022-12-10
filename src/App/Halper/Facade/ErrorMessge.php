@@ -66,11 +66,15 @@ class ErrorMessge {
                     'httpcode'  => $arguments["httpcode"]
                 ],
                     'message'  => [
-                        'data'  => $arguments["message"]
+                                'data' => array_diff($arguments,[
+                                    'Status'    => $arguments["status"],
+                                    'httpcode'  => $arguments["httpcode"],
+                                    'error'     => $errorStatus
+                                ])
                 ]
             ]
         ];
-            return response()->json($response, 404);
+            return response()->json($response, $arguments["httpcode"]);
     }
 
     public static function serverError($arguments = ["message" => "Internal Server Error"])
